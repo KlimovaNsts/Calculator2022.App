@@ -1,41 +1,262 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Calculator2022.MainPage">
+             x:Class="Calculator2022.MainPage"
+             Padding="{OnPlatform Android='0,20,0,0'}"
+             BackgroundColor="{DynamicResource SecondaryColor}">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
 
-            <Label
-                Text="Hello, World!"
-                x:Name="lblScreen"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+    <Grid
+        Padding="5,0"
+        ColumnSpacing="1"
+        RowSpacing="1">
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Clear"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        </VerticalStackLayout>
-    </ScrollView>
+        <Label
+            x:Name="lblScreen"
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Padding="30"
+            BackgroundColor="Black"
+            FontAttributes="Bold"
+            FontSize="52"
+            HorizontalTextAlignment="End"
+            LineBreakMode="NoWrap"
+            Text="0"
+            TextColor="Lavender"
+            VerticalTextAlignment="Center" />
 
+        <Button
+            x:Name="NumClear"
+            Grid.Row="1"
+            Grid.Column="0"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Clear"
+            CornerRadius="20"
+            FontSize="48"
+            Text="C"
+            TextColor="Tomato"/>
+
+        <Button
+            x:Name="NumberDot"
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Dot"
+            CornerRadius="20"
+            FontSize="52"
+            Text="."
+            TextColor="Tomato" />
+
+        <Button
+             x:Name="NumberSign"
+            Grid.Row="1"
+            Grid.Column="2"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Sign"
+            CornerRadius="20"
+            FontSize="48"
+            Text="+/-"
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="NumberDivide"
+            Grid.Row="1"
+            Grid.Column="3"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"    
+            Clicked="Divide"
+            CornerRadius="20"
+            FontSize="48"
+            Text="/"
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="NumberMultiply"
+            Grid.Row="2"
+            Grid.Column="3"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Multiply"
+            CornerRadius="20"
+            FontSize="48"
+            Text="*"
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="NumberMinus"
+            Grid.Row="3"
+            Grid.Column="3"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Minus"
+            CornerRadius="20"
+            FontSize="48"
+            Text="-"
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="NumberPlus"
+            Grid.Row="4"
+            Grid.Column="3"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked="Plus"
+            CornerRadius="20"
+            FontSize="48"
+            Text="+"
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="NumberResult"
+            Grid.Row="5"
+            Grid.Column="3"
+            BackgroundColor="SteelBlue"
+            FontAttributes="Bold"
+            Clicked= "Result"
+            CornerRadius="20"
+            FontSize="48"
+            Text="="
+            TextColor="Tomato" />
+
+        <Button
+            x:Name="Number0"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberZero"
+            CornerRadius="20"
+            FontSize="48"
+            Text="0"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number1"
+            Grid.Row="4"
+            Grid.Column="0"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberOne"
+            CornerRadius="20"
+            FontSize="48"
+            Text="1"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number2"
+            Grid.Row="4"
+            Grid.Column="1"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberTwo"
+            CornerRadius="20"
+            FontSize="48"
+            Text="2"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number3"
+            Grid.Row="4"
+            Grid.Column="2"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberThree"
+            CornerRadius="20"
+            FontSize="48"
+            Text="3"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number4"
+            Grid.Row="3"
+            Grid.Column="0"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberFour"
+            CornerRadius="20"
+            FontSize="48"
+            Text="4"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number5"
+            Grid.Row="3"
+            Grid.Column="1"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberFive"
+            CornerRadius="20"
+            FontSize="48"
+            Text="5"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number6"
+            Grid.Row="3"
+            Grid.Column="2"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberSix"
+            CornerRadius="20"
+            FontSize="48"
+            Text="6"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number7"
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberSeven"
+            CornerRadius="20"
+            FontSize="48"
+            Text="7"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number8"
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberEight"
+            CornerRadius="20"
+            FontSize="48"
+            Text="8"
+            TextColor="Lavender" />
+
+        <Button
+            x:Name="Number9"
+            Grid.Row="2"
+            Grid.Column="2"
+            BackgroundColor="DarkBlue"
+            FontAttributes="Bold"
+            Clicked="NumberNine"
+            CornerRadius="20"
+            FontSize="48"
+            Text="9"
+            TextColor="Lavender" />
+    </Grid>
 </ContentPage>
